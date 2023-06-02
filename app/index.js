@@ -1,14 +1,40 @@
 import { Link } from "expo-router";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { Stack } from "expo-router";
 
 export default function Page() {
+
+  const users = [
+    {
+      username: 'shawnlts6',
+      name: 'shawn'
+    },
+    {
+      username: 'username2',
+      name: 'user2'
+    },
+    {
+      username: 'username3',
+      name: 'user3'
+    },
+  ]
+
   return (
     <SafeAreaView style={styles.container}>
+
       <View style={styles.main}>
         <Text style={styles.title}>Hello World</Text>
-        <Text style={styles.subtitle}>This imllkmlkms the first page of your app.</Text>
 
-        <Link href={'/profile'}>open profidf</Link>
+        {users.map((user) => (
+          <Link
+            key={user.username}
+            style={styles.subtitle} 
+            href={{pathname: `/${user.username}`}}
+          >
+            open {user.name} profile
+          </Link>
+        ))}
+
       </View>
     </SafeAreaView>
   );
