@@ -35,7 +35,7 @@ export default () => {
                     tabBarIcon: ({color}) => (
                         <Ionicons name="ios-chatbubbles-outline" size={24} color={color} />
                     ),
-                    title: 'Chats'
+                    headerShown: false
                 }}
             />
         </Tabs>
