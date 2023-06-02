@@ -11,19 +11,19 @@ export default () => {
                 headerTitleStyle: {
                     fontWeight: 'bold'
                 },
-                headerRight: () => (
-                    <Ionicons 
-                        name="ios-information-circle-outline" 
-                        size={24} color="black" 
-                        onPress={() => router.push('/modal')}
-                    />
-                )
             }}
         >
             <Stack.Screen 
                 name="index" 
                 options={{
-                    title: 'Home'
+                    title: 'Home',
+                    headerRight: () => (
+                        <Ionicons 
+                            name="ios-information-circle-outline" 
+                            size={24} color="black" 
+                            onPress={() => router.push('/modal')}
+                        />
+                    ),
                 }}
             />
 
@@ -47,6 +47,13 @@ export default () => {
                     headerTitleStyle: {
                         // fontWeight: 'bold',
                     }
+                }}
+            />
+
+            <Stack.Screen 
+                name="home"
+                options={{
+                    headerShown: false
                 }}
             />
         </Stack>
